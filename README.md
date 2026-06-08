@@ -104,7 +104,7 @@ aws --version
 ```bash
 
 # Variables
-$REGION = "us-east-1"
+$REGION = "ap-south-2"
 $VPC_CIDR = "10.0.0.0/16"
 $VPC_NAME = "Jenkins-EKS"
 
@@ -127,7 +127,7 @@ Write-Host "✅ VPC Created: $VPC_ID"
 $PUB_SUBNET1 = (aws ec2 create-subnet `
   --vpc-id $VPC_ID `
   --cidr-block 10.0.1.0/24 `
-  --availability-zone us-east-1a `
+  --availability-zone ap-south-2a `
   --query "Subnet.SubnetId" `
   --output text)
   aws ec2 create-tags `
@@ -141,7 +141,7 @@ $PUB_SUBNET1 = (aws ec2 create-subnet `
 $PUB_SUBNET2 = (aws ec2 create-subnet `
   --vpc-id $VPC_ID `
   --cidr-block 10.0.2.0/24 `
-  --availability-zone us-east-1b `
+  --availability-zone ap-south-2b `
   --query "Subnet.SubnetId" `
   --output text)
   aws ec2 create-tags `
@@ -156,7 +156,7 @@ $PUB_SUBNET2 = (aws ec2 create-subnet `
 $PRI_SUBNET1 = (aws ec2 create-subnet `
   --vpc-id $VPC_ID `
   --cidr-block 10.0.3.0/24 `
-  --availability-zone us-east-1a `
+  --availability-zone ap-south-2a `
   --query "Subnet.SubnetId" `
   --output text)
   aws ec2 create-tags `
@@ -169,7 +169,7 @@ $PRI_SUBNET1 = (aws ec2 create-subnet `
 $PRI_SUBNET2 = (aws ec2 create-subnet `
   --vpc-id $VPC_ID `
   --cidr-block 10.0.4.0/24 `
-  --availability-zone us-east-1b `
+  --availability-zone ap-south-2b `
   --query "Subnet.SubnetId" `
   --output text)
   aws ec2 create-tags `
@@ -288,7 +288,7 @@ Write-Host "✅ Security Group Created: $SG_ID_3 (SonarQube Server)"
 ```bash
 
 # Variables
-REGION="us-east-1"
+REGION="ap-south-2"
 VPC_CIDR="10.0.0.0/16"
 VPC_NAME="Jenkins-EKS"
 ECR_APP_NAME="secureshop"
@@ -313,7 +313,7 @@ echo "✅ VPC Created: $VPC_ID"
 PUB_SUBNET1=$(aws ec2 create-subnet \
   --vpc-id $VPC_ID \
   --cidr-block 10.0.1.0/24 \
-  --availability-zone us-east-1a \
+  --availability-zone ap-south-2a \
   --query 'Subnet.SubnetId' \
   --output text)
   
@@ -328,7 +328,7 @@ PUB_SUBNET1=$(aws ec2 create-subnet \
 PUB_SUBNET2=$(aws ec2 create-subnet \
   --vpc-id $VPC_ID \
   --cidr-block 10.0.2.0/24 \
-  --availability-zone us-east-1b \
+  --availability-zone ap-south-2b \
   --query 'Subnet.SubnetId' \
   --output text)
   
@@ -343,7 +343,7 @@ PUB_SUBNET2=$(aws ec2 create-subnet \
 PRI_SUBNET1=$(aws ec2 create-subnet \
   --vpc-id $VPC_ID \
   --cidr-block 10.0.3.0/24 \
-  --availability-zone us-east-1a \
+  --availability-zone ap-south-2a \
   --query 'Subnet.SubnetId' \
   --output text)
   
@@ -358,7 +358,7 @@ PRI_SUBNET1=$(aws ec2 create-subnet \
 PRI_SUBNET2=$(aws ec2 create-subnet \
   --vpc-id $VPC_ID \
   --cidr-block 10.0.4.0/24 \
-  --availability-zone us-east-1b \
+  --availability-zone ap-south-2b \
   --query 'Subnet.SubnetId' \
   --output text)
   
@@ -510,7 +510,7 @@ $JENKINS_ID = (aws ec2 run-instances `
   --associate-public-ip-address `
   --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=Jenkins-Server}]" `
   --query "Instances[0].InstanceId" `
-  --region us-east-1 `
+  --region ap-south-2 `
   --output text)
 
 Write-Host " Jenkins Server Instance ID: $JENKINS_ID"
@@ -526,7 +526,7 @@ $NEXUS_ID = (aws ec2 run-instances `
   --associate-public-ip-address `
   --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=Nexus-Server}]" `
   --query "Instances[0].InstanceId" `
-  --region us-east-1 `
+  --region ap-south-2 `
   --output text)
 
 Write-Host " Nexus Server Instance ID: $NEXUS_ID"
@@ -542,7 +542,7 @@ $SONARQUBE_ID = (aws ec2 run-instances `
   --associate-public-ip-address `
   --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=SonarQube-Server}]" `
   --query "Instances[0].InstanceId" `
-  --region us-east-1 `
+  --region ap-south-2 `
   --output text)
 
 Write-Host " SonarQube Server Instance ID: $SONARQUBE_ID"
@@ -576,7 +576,7 @@ JENKINS_ID=$(aws ec2 run-instances \
   --associate-public-ip-address \
   --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=Jenkins-Server}]" \
   --query "Instances[0].InstanceId" \
-  --region us-east-1 \
+  --region ap-south-2 \
   --output text)
 
 Write-Host " Jenkins Server Instance ID: $JENKINS_ID"
@@ -592,7 +592,7 @@ NEXUS_ID=$(aws ec2 run-instances \
   --associate-public-ip-address \
   --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=Nexus-Server}]" \
   --query "Instances[0].InstanceId" \
-  --region us-east-1 \
+  --region ap-south-2 \
   --output text)
 
 Write-Host " Nexus Server Instance ID: $NEXUS_ID"
@@ -608,7 +608,7 @@ SONARQUBE_ID=$(aws ec2 run-instances \
   --associate-public-ip-address \
   --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=SonarQube-Server}]" \
   --query "Instances[0].InstanceId" \
-  --region us-east-1 \
+  --region ap-south-2 \
   --output text)
 
 Write-Host " SonarQube Server Instance ID: $SONARQUBE_ID"
@@ -1062,7 +1062,7 @@ docker rm -f sonar sonar-db
 ```bash
 
 # Variables
-REGION="us-east-1"
+REGION="ap-south-2"
 VPC_NAME="Jenkins-EKS"
 ECR_APP_NAME="secureshop"
 
@@ -1099,7 +1099,7 @@ kind: ClusterConfig
 
 metadata:
   name: jenkins-secureapp
-  region: us-east-1 # Must match your subnet AZs
+  region: ap-south-2 # Must match your subnet AZs
   version: "1.33"   # Latest stable Kubernetes version
 
 vpc:
@@ -1107,11 +1107,11 @@ vpc:
   cidr: "10.0.0.0/16"   # Replace with your CIDR Value
   subnets:
     public:
-      us-east-1a: { id: subnet-0d52d70f8e9f222ea }   # Replace with your PUB_SUBNET1
-      us-east-1b: { id: subnet-07aba60194037fad4 }   # Replace with your PUB_SUBNET2
+      ap-south-2a: { id: subnet-0d52d70f8e9f222ea }   # Replace with your PUB_SUBNET1
+      ap-south-2b: { id: subnet-07aba60194037fad4 }   # Replace with your PUB_SUBNET2
     private:
-      us-east-1a: { id: subnet-0d0014d3a98b1d5ce }   # Replace with your PRI_SUBNET1
-      us-east-1b: { id: subnet-0c8f6c6bc5082ec87 }   # Replace with your PRI_SUBNET2
+      ap-south-2a: { id: subnet-0d0014d3a98b1d5ce }   # Replace with your PRI_SUBNET1
+      ap-south-2b: { id: subnet-0c8f6c6bc5082ec87 }   # Replace with your PRI_SUBNET2
       
 managedNodeGroups:
   - name: worker-nodes
@@ -1148,7 +1148,7 @@ jenkins-eks-cluster.yaml
 
 ### 🧾 Validate your config
 ```bash
-eksctl utils validate cluster --config-file jenkins-eks-cluster.yaml --region us-east-1
+eksctl utils validate cluster --config-file jenkins-eks-cluster.yaml --region ap-south-2
 ```
 
 ### 🚀 Create the cluster
@@ -1158,7 +1158,7 @@ eksctl create cluster -f jenkins-eks-cluster.yaml
 
 ### 🧩 Verify the cluster
 ```bash
-aws eks --region us-east-1 update-kubeconfig --name jenkins-secureapp
+aws eks --region ap-south-2 update-kubeconfig --name jenkins-secureapp
 kubectl get nodes
 kubectl get pods -A
 ```
@@ -1233,7 +1233,7 @@ sudo chmod 600 /var/lib/jenkins/.aws/credentials
 ☸️ Configure kubectl for Jenkins (EKS Access)
 *Run the following as root (or ubuntu) to create kubeconfig for Jenkins:*
 ```bash
-aws eks --region us-east-1 update-kubeconfig --name jenkins-secureapp
+aws eks --region ap-south-2 update-kubeconfig --name jenkins-secureapp
 ```
 This creates /root/.kube/config.
 *Now copy it to the Jenkins user home:*
