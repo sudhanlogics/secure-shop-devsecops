@@ -602,7 +602,7 @@ NEXUS_ID=$(aws ec2 run-instances \
   --region ap-south-2 \
   --output text)
 
-Write-Host " Nexus Server Instance ID: $NEXUS_ID"
+echo "Nexus Server Instance ID: $NEXUS_ID"
 
 # Launch EC2 Instance for SonarQube Server
 SONARQUBE_ID=$(aws ec2 run-instances \
