@@ -481,7 +481,7 @@ echo "✅ Security Group Created: $SG_ID_1"
 ```bash
 
 # Define variables
-$AMI_ID = "ami-0ecb62995f68bb549"
+$AMI_ID = "ami-05f6ea5de51175a06"
 $KEY_NAME = "DeoriginLabs"
 ```
 
@@ -552,7 +552,7 @@ Write-Host " SonarQube Server Instance ID: $SONARQUBE_ID"
 ```bash
 
 # Define variables
-AMI_ID="ami-0ecb62995f68bb549"
+AMI_ID="ami-05f6ea5de51175a06"
 KEY_NAME="DeoriginLabs"
 ```
 
