@@ -646,7 +646,7 @@ After creating your Jenkins EC2 instance, you can securely connect to it using t
 ```powershell
 # Variables
 $JENKINS_IP = "YOUR_JENKINS_PUBLIC_IP"
-$KEY_NAME = "Jenkins-key"
+$KEY_NAME = "DeoriginLabs"
 
 # Change directory to where the PEM file is stored
 cd "C:\path\to\your\pem\file"
@@ -660,8 +660,8 @@ ssh -i "$KEY_NAME.pem" ubuntu@$JENKINS_IP
 
 ```powershell
 # Variables
-$JENKINS_IP = "YOUR_JENKINS_PUBLIC_IP"
-$KEY_NAME = "Jenkins-key"
+JENKINS_IP="YOUR_JENKINS_PUBLIC_IP"
+KEY_NAME="DeoriginLabs"
 
 # Navigate to PEM file location
 cd ~/Downloads   # or the directory where you saved the PEM file
@@ -795,7 +795,7 @@ First exit from the Jenkins Server and then login again to the Nexus Server
 ### 💻 Windows PowerShell
 # Variables
 $NEXUS_IP = "YOUR_NEXUS_PUBLIC_IP"
-$KEY_NAME = "Jenkins-key"
+$KEY_NAME = "DeoriginLabs"
 
 # Change directory to where the PEM file is stored
 cd "C:\path\to\your\pem\file"
@@ -809,8 +809,8 @@ ssh -i "$KEY_NAME.pem" ubuntu@$NEXUS_IP
 
 ```bash
 # Variables
-$NEXUS_IP = "YOUR_NEXUS_PUBLIC_IP"
-$KEY_NAME = "Jenkins-key"
+NEXUS_IP="YOUR_NEXUS_PUBLIC_IP"
+KEY_NAME="DeoriginLabs"
 
 # Navigate to PEM file location
 cd ~/Downloads   # or the directory where you saved the PEM file
@@ -915,7 +915,7 @@ First exit from the Nexus Server and then login again to the SonarQube Server
 ```powershell
 # Variables
 $SONARQUBE_IP = "YOUR_SONARQUBE_PUBLIC_IP"
-$KEY_NAME = "Jenkins-key"
+$KEY_NAME = "DeoriginLabs"
 
 # Change directory to where the PEM file is stored
 cd "C:\path\to\your\pem\file"
@@ -929,8 +929,8 @@ ssh -i "$KEY_NAME.pem" ubuntu@$SONARQUBE_IP
 
 ```bash
 # Variables
-$SONARQUBE_IP = "YOUR_SONARQUBE_PUBLIC_IP"
-$KEY_NAME = "Jenkins-key"
+SONARQUBE_IP="YOUR_SONARQUBE_PUBLIC_IP"
+KEY_NAME="DeoriginLabs"
 
 # Navigate to PEM file location
 cd ~/Downloads   # or the directory where you saved the PEM file
