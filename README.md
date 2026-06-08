@@ -586,7 +586,7 @@ JENKINS_ID=$(aws ec2 run-instances \
   --region ap-south-2 \
   --output text)
 
-Write-Host " Jenkins Server Instance ID: $JENKINS_ID"
+echo "Jenkins Server Instance ID: $JENKINS_ID"
 
 # Launch EC2 Instance for Nexus Server
 NEXUS_ID=$(aws ec2 run-instances \
@@ -618,7 +618,7 @@ SONARQUBE_ID=$(aws ec2 run-instances \
   --region ap-south-2 \
   --output text)
 
-Write-Host " SonarQube Server Instance ID: $SONARQUBE_ID"
+echo "SonarQube Server Instance ID: $SONARQUBE_ID"
 ```
 
 ---
