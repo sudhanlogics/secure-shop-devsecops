@@ -292,7 +292,7 @@ REGION="ap-south-2"
 VPC_CIDR="10.0.0.0/16"
 VPC_NAME="Jenkins-EKS"
 ECR_APP_NAME="secureshop"
-AWS_ACCOUNT_ID="822654906952"
+AWS_ACCOUNT_ID="870150365165"
 
 # Create VPC
 VPC_ID=$(aws ec2 create-vpc \
