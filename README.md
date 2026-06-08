@@ -476,14 +476,14 @@ echo "✅ Security Group Created: $SG_ID_1"
 
 ## 💻 Launch a Jenkins Server (Ubuntu EC2)
 
+### 💻 Windows Powershell
+
 ```bash
 
 # Define variables
 $AMI_ID = "ami-0ecb62995f68bb549"
 $KEY_NAME = "jenkins-key"
 ```
-
-### 💻 Windows Powershell
 
 ```bash
 
@@ -549,8 +549,15 @@ Write-Host " SonarQube Server Instance ID: $SONARQUBE_ID"
 ```
 
 ### 🐧 Linux / 🧠 macOS
+```bash
+
+# Define variables
+AMI_ID="ami-0ecb62995f68bb549"
+KEY_NAME="jenkins-key"
+```
 
 ```bash
+
 
 # Create and save a new PEM key
 
